@@ -4,7 +4,7 @@ import numpy as np
 import pytesseract
 #pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files (x86)\Tesseract-OCR\tesseract.exe'
 
-img = cv2.imread('005.JPG',cv2.IMREAD_COLOR)
+img = cv2.imread('003.JPG',cv2.IMREAD_COLOR)
 img = cv2.resize(img, (600,400) )
 
 gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY) 
@@ -44,7 +44,7 @@ new_image = cv2.bitwise_and(img,img,mask=mask)
 Cropped = gray[topx:bottomx+1, topy:bottomy+1]
 
 text = pytesseract.image_to_string(Cropped, config='--psm 11')
-print("programming_fever's License Plate Recognition\n")
+print("License Plate Recognition\n")
 print("Detected license plate Number is:",text)
 img = cv2.resize(img,(500,300))
 Cropped = cv2.resize(Cropped,(400,200))
